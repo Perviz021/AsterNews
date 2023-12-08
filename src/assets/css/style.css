@@ -1,0 +1,32 @@
+body,
+html {
+  @apply h-full bg-[#F4F9F8];
+}
+
+body * {
+  @apply text-amberBlack;
+}
+
+.nav-link {
+  @apply py-[12px] flex px-[30px] items-start;
+}
+
+.nav-link .icon {
+  @apply text-[24px] mr-[24px];
+}
+
+.nav-link span {
+  @apply text-[15px];
+}
+
+.nav-link.active {
+  @apply bg-[rgba(47,_159,_248,_0.10)] rounded-full relative after:content-[''] after:absolute after:w-[5px] after:h-[5px] after:rounded-full after:bg-skyBlue after:left-[15px] after:top-2/4 after:-translate-y-2/4;
+}
+
+.nav-link.active * {
+  @apply text-skyBlue;
+}
+
+.nav-link.active span {
+  @apply font-bold;
+}

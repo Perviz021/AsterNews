@@ -1,3 +1,7 @@
+* {
+  @apply !outline-none;
+}
+
 body,
 html {
   @apply h-full bg-[#F4F9F8];
@@ -8,7 +12,7 @@ body * {
 }
 
 .nav-link {
-  @apply py-[12px] flex px-[30px] items-start;
+  @apply py-[12px] flex px-[30px] items-center;
 }
 
 .nav-link .icon {
@@ -20,7 +24,7 @@ body * {
 }
 
 .nav-link.active {
-  @apply bg-[rgba(47,_159,_248,_0.10)] rounded-full relative after:content-[''] after:absolute after:w-[5px] after:h-[5px] after:rounded-full after:bg-skyBlue after:left-[15px] after:top-2/4 after:-translate-y-2/4;
+  @apply bg-[rgba(47,_159,_248,_0.10)] rounded-tr-full rounded-br-full relative after:content-[''] after:absolute after:w-[5px] after:h-[5px] after:rounded-full after:bg-skyBlue after:left-[15px] after:top-2/4 after:-translate-y-2/4;
 }
 
 .nav-link.active * {
@@ -29,4 +33,12 @@ body * {
 
 .nav-link.active span {
   @apply font-bold;
+}
+
+.dropdown-menu {
+  @apply absolute right-0 z-50 w-[190px] transition-all top-0 invisible opacity-0;
+}
+
+.dropdown-menu--open {
+  @apply opacity-100 visible top-full;
 }

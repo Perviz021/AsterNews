@@ -11,6 +11,12 @@ export default {
         skyBlue: "#2F9FF8",
         amberBlack: "#072D4B",
       },
+      borderRadius: {
+        theme: "4px",
+      },
+      boxShadow: {
+        theme: "0px 2px 20px 0px rgba(0, 0, 0, 0.04)",
+      },
     },
   },
   plugins: [],

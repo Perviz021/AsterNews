@@ -1,0 +1,47 @@
+/* 
+    Button
+ */
+
+.btn {
+  @apply h-[32px] px-[25px] inline-flex justify-center items-center text-[15px];
+}
+
+.btn--lg {
+  @apply h-[38px];
+}
+
+.btn--xl {
+  @apply h-[46px];
+}
+
+.btn--rounded {
+  @apply rounded-[4px];
+}
+
+.btn--primary {
+  @apply bg-primary text-white;
+}
+
+.btn--sky-blue {
+  @apply bg-skyBlue text-white;
+}
+
+.btn--outline-amberBlack {
+  @apply border-amberBlack border-[0.2px];
+}
+
+.head-1 {
+  @apply text-[26px] font-[700] leading-[34px];
+}
+
+.head-2 {
+  @apply text-[20px] font-[700] leading-normal;
+}
+
+.head-3 {
+  @apply text-[18px] font-[500] leading-[24px];
+}
+
+.head-4 {
+  @apply text-[15px] font-[700] leading-normal;
+}

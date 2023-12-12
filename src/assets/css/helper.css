@@ -1,9 +1,9 @@
 /* 
-    Button
- */
+ *  Button
+*/
 
 .btn {
-  @apply h-[32px] px-[25px] inline-flex justify-center items-center text-[15px];
+  @apply h-[32px] px-[15px] inline-flex justify-center items-center text-[15px];
 }
 
 .btn--lg {
@@ -30,6 +30,10 @@
   @apply border-amberBlack border-[0.2px];
 }
 
+.btn--outline-skyBlue {
+  @apply border-skyBlue border-[0.2px] text-skyBlue;
+}
+
 .head-1 {
   @apply text-[26px] font-[700] leading-[34px];
 }
@@ -44,4 +48,8 @@
 
 .head-4 {
   @apply text-[15px] font-[700] leading-normal;
+}
+
+.card {
+  @apply bg-white p-[15px] shadow-theme;
 }

@@ -1,3 +1,19 @@
 .layout {
-  @apply flex w-full h-full;
+  @apply flex w-full h-full gap-x-[45px] 2xl:w-[1200px] 2xl:mx-auto;
+}
+
+.layout-left {
+  @apply w-[260px] shrink-0;
+}
+
+.layout-main {
+  @apply flex-1 pr-[34px];
+}
+
+.layout-right {
+  @apply w-[285px] shrink-0;
+}
+
+.layout-page {
+  @apply flex gap-x-[45px];
 }

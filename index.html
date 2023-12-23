@@ -9,15 +9,17 @@
   <body>
     <main class="layout">
       <aside class="layout-left">
+        <!-- Logo part -->
         <a
           href="/index.html"
-          class="flex items-center py-[20px] px-[30px] space-x-[15px]"
+          class="flex items-center space-x-[15px] px-[30px] py-[20px]"
         >
-          <img src="./src/assets/img/logo.svg" alt="" />
-          <span class="text-primary font-[700] text-[18px]">Aster News</span>
+          <img src="./src/assets/img/logo.svg" alt="logo img" />
+          <span class="text-primary font-bold text-[18px]">Aster News</span>
         </a>
 
-        <nav id="navigation" class="space-y-[15px]">
+        <!-- Navbar -->
+        <nav id="navigation">
           <template id="navigation-item">
             <a href="#" class="nav-link">
               <i class="icon icon-home1"></i>
@@ -26,18 +28,21 @@
           </template>
         </nav>
 
+        <!-- Subscribe button -->
         <div id="subscription">
           <template id="subscription-box">
-            <div class="bg-skyBlue mt-[70px] p-[20px] rounded-[4px] ml-[14px]">
-              <div class="flex items-center mb-[13px]">
-                <i class="icon icon-gift1 text-[24px] text-white mr-[15px]"></i>
-                <span class="text-white">Subscribe to Premium</span>
+            <div
+              class="bg-skyBlue p-[20px] text-white ml-[15px] mt-[70px] rounded-[4px] space-y-[13px]"
+            >
+              <div class="flex items-center space-x-[15px]">
+                <i class="icon icon-gift1 text-[24px]"></i>
+                <span class="text-[15px]">Subscribe to Premium</span>
               </div>
-              <div class="flex justify-between items-center">
-                <span class="text-white text-[30px] font-bold"
-                  >$8<small class="text-white font-light">/m</small></span
+              <div class="flex items-center space-x-[22px]">
+                <span class="text-[30px] font-bold"
+                  >$8<small class="font-light">/m</small></span
                 >
-                <button class="btn btn--primary btn--lg btn--rounded">
+                <button class="btn btn--lg btn--primary btn--rounded">
                   Upgrade
                 </button>
               </div>
@@ -46,55 +51,54 @@
         </div>
       </aside>
 
-      <div class="layout-main">
-        <header class="pt-[15px] flex justify-between items-center mb-[40px]">
-          <div class="flex items-center flex-1 space-x-[20px]">
-            <div
-              class="bg-[#ECF5F8] w-[495px] flex items-center rounded-theme shrink-0"
-            >
+      <div class="layout-main mr-[34px]">
+        <header class="pt-[15px] flex items-center justify-between mb-[40px]">
+          <div class="flex space-x-[20px] shrink-0">
+            <!-- Input field -->
+            <div class="bg-[#ECF5F8] rounded-theme flex w-[495px] items-center">
               <input
                 type="text"
-                class="h-[46px] bg-transparent w-full px-[14px] placeholder:text-[#072d4b4d]"
-                placeholder="Search for news.."
+                class="bg-transparent h-[46px] px-[14px] w-full"
               />
               <i
-                class="icon icon-search1 text-[18px] text-amberBlack w-[46px] flex justify-center items-center"
+                class="icon icon-search1 w-[46px] flex justify-center items-center cursor-pointer"
               ></i>
             </div>
+
+            <!-- Latest News -->
             <a
               href="#"
-              class="btn !px-[14px] btn--xl btn--outline-amberBlack btn--rounded"
+              class="btn btn--xl btn--rounded space-x-[35px] btn--outline-amberBlack shrink-0"
             >
               <span>
-                Latest news on <span class="ml-1 text-skyBlue">Covid-19</span>
+                Latest news on <span class="text-skyBlue ml-1">Covid-19</span>
               </span>
-              <i class="icon icon-arrow-right1 ml-[38px]"></i>
+              <i class="icon icon-arrow-right1"></i>
             </a>
           </div>
 
-          <div class="shrink-0 relative group" x-data="{open: false}">
+          <!-- Dropdown Menu -->
+          <div class="shrink-0 relative" x-data="{open: false}">
             <div
-              class="flex items-center cursor-pointer space-x-[13px]"
+              class="flex flex-1 items-center space-x-[13px] cursor-pointer"
               @click="open = !open"
               @click.outside="open=false"
             >
               <span>
                 <i class="icon icon-user1"></i>
               </span>
-              <span>My Profile</span>
-              <span>
-                <i class="icon icon-chevron-down"></i>
+              <span> My Profile </span>
+              <span class="text-xl">
+                <i class="icon icon-chevron-down1"></i>
               </span>
             </div>
-
             <div :class="{'dropdown-menu': true, 'dropdown-menu--open': open}">
-              <div
-                class="mt-[15px] divide-y bg-white rounded-theme border border-gray-200"
-              >
-                <a href="#" class="p-[8px] block">Logout</a>
-                <a href="#" class="p-[8px] block">Logout</a>
-                <a href="#" class="p-[8px] block">Logout</a>
-                <a href="#" class="p-[8px] block">Logout</a>
+              <div class="rounded-theme bg-white divide-y mt-[15px]">
+                <a href="#" class="block p-[8px]">Logout</a>
+                <a href="#" class="block p-[8px]">Logout</a>
+                <a href="#" class="block p-[8px]">Logout</a>
+                <a href="#" class="block p-[8px]">Logout</a>
+                <a href="#" class="block p-[8px]">Logout</a>
               </div>
             </div>
           </div>
@@ -104,11 +108,12 @@
           <div class="layout-content flex-1">
             <div>
               <h3 class="head-2 mb-[22px]">Top Stories for you</h3>
-              <div class="grid grid-cols-2 gap-[20px]" id="news-container">
+              <div class="grid grid-cols-2 gap-[20px]" id="news-content">
                 <template id="news-template">
                   <article
                     class="bg-white shadow-theme py-[17px] px-[23px] rounded-theme"
                   >
+                    <!-- Top part image -->
                     <div class="flex space-x-[20px]">
                       <div>
                         <h5 class="head-3 line-clamp-2 mb-[9px] title">
@@ -123,35 +128,37 @@
                         </p>
                       </div>
                       <div>
-                        <figure class="w-[120px] h-[120px]">
+                        <figure
+                          class="w-[120px] h-[120px] rounded-theme overflow-hidden"
+                        >
                           <img
-                            class="w-full h-full object-cover rounded-theme overflow-hidden"
                             src="https://all-api.bitcode.az/uploads/photos/news/photo-9.jpeg"
                             alt=""
+                            class="w-full h-full object-cover"
                           />
                         </figure>
                       </div>
                     </div>
 
+                    <!-- Agency part  -->
                     <div
                       class="flex items-center justify-between text-[12px] pt-[8px]"
                     >
                       <div class="flex items-center space-x-[10px]">
                         <span class="agency">Sport Biz</span>
                         <span
-                          class="bg-skyBlue w-[3px] h-[3px] inline-flex rounded-full"
+                          class="w-[4px] h-[4px] bg-skyBlue inline-flex rounded-full"
                         ></span>
                         <span class="date">42 mins ago</span>
                       </div>
-
                       <div class="space-x-[20px]">
-                        <a href="#">
-                          <i class="icon icon-share1 text-primary"></i>
-                          <span class="text-primary">Share</span>
+                        <a href="#" class="text-primary">
+                          <i class="icon icon-share1"></i>
+                          <span>Share</span>
                         </a>
                         <a href="#" class="read-later text-primary">
-                          <i class="icon icon-pocket text-primary"></i>
-                          <span class="text-primary">Read Later</span>
+                          <i class="icon icon-pocket"></i>
+                          <span>Read Later</span>
                         </a>
                       </div>
                     </div>
@@ -165,35 +172,35 @@
             <!-- Weather -->
             <div class="card">
               <div
-                class="flex items-start justify-between border-b border-gray-200 pb-2"
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <h5>Coimbatore, Tamil Nadu</h5>
-                <span>
-                  <i class="icon icon-crosshair"></i>
-                </span>
+                <span>Coimbatore, Tamil Nadu</span>
+                <i class="icon icon-crosshair text-[18px]"></i>
               </div>
               <div class="flex items-center justify-between">
                 <div>
                   <small class="text-[15px]">Sunny</small>
-                  <p class="font-bold text-[26px]">31<sup>o</sup> c</p>
+                  <p class="text-[26px] font-bold">31<sup>o</sup>c</p>
                 </div>
-                <div class="text-[56px]">
-                  <i class="icon icon-sun text-yellow-300"></i>
+                <div class="text-[54px] text-yellow-300">
+                  <i class="icon icon-sun"></i>
                 </div>
               </div>
             </div>
 
-            <!-- Story -->
+            <!-- Story Writer -->
             <div class="card">
               <div class="flex items-center space-x-[12px] mb-[12px]">
                 <i class="icon icon-feather text-[24px]"></i>
-                <h5 class="text-[15px]">Become a Story Writer</h5>
+                <p>Become a Story Writer</p>
               </div>
-              <div class="flex items-center justify-between space-x-[25px]">
-                <p class="text-[12px] opacity-[0.6]">
+              <div class="flex items-center space-x-[25px]">
+                <p class="text-[12px] text-gray-400">
                   Contribute stories and start earning.
                 </p>
-                <button class="btn btn--rounded btn--outline-skyBlue shrink-0">
+                <button
+                  class="btn btn--lg btn--outline-skyBlue shrink-0 btn--rounded"
+                >
                   Know More
                 </button>
               </div>
@@ -201,39 +208,38 @@
 
             <!-- Quick Bytes -->
             <div class="card">
+              <!-- Top part -->
               <div
-                class="flex items-center justify-between mb-[12px] border-b border-gray-200"
+                class="flex items-center justify-between mb-[12px] border-b border-gray-200 pb-2"
               >
-                <div class="flex items-center space-x-[12px] pb-[15px]">
+                <div class="flex items-center space-x-[12px]">
                   <i class="icon icon-file-text1 text-[24px]"></i>
-                  <h5 class="text-[15px]">Quick Bytes</h5>
+                  <p>Quick Bytes</p>
                 </div>
-                <!-- Buttons -->
                 <div class="flex items-center space-x-[10px]">
                   <button
                     disabled
-                    type="button"
-                    class="bg-skyBlue disabled:opacity-40 w-[24px] h-[24px] flex items-center justify-center rounded-full"
+                    class="w-[24px] h-[24px] disabled:opacity-40 inline-flex items-center justify-center bg-skyBlue text-white rounded-full"
                   >
-                    <i class="icon icon-chevron-left1 text-white"></i>
+                    <i class="icon icon-chevron-left1"></i>
                   </button>
                   <button
-                    type="button"
-                    class="bg-skyBlue w-[24px] h-[24px] flex items-center justify-center rounded-full"
+                    class="w-[24px] h-[24px] inline-flex items-center justify-center bg-skyBlue text-white rounded-full"
                   >
-                    <i class="icon icon-chevron-right1 text-white"></i>
+                    <i class="icon icon-chevron-right1"></i>
                   </button>
                 </div>
               </div>
-              <!-- Text -->
-              <div class="pb-2 space-y-[15px]">
-                <p class="opacity-60 text-[12px]">
+
+              <!-- Bottom part -->
+              <div class="space-y-[15px] text-[12px] text-gray-400">
+                <p>
                   The price of petrol remained unchanged on July 6 after
                   reaching a new record high on the previous day, according to a
                   price notification by state-owned fuel retailers. The diesel
                   price remained stable for the second consecutive day.
                 </p>
-                <p class="opacity-60 text-[12px]">
+                <p>
                   The increase on July 5, 35th in two months, took the petrol
                   price in Delhi closer to Rs 100 per litre-mark. The petrol
                   price in the national capital soared to Rs 99.9 a litre and
@@ -245,14 +251,14 @@
 
             <!-- Subscribe -->
             <div class="card">
-              <h5 class="text-[15px] mb-[12px]">Subscribe to our newsletter</h5>
-              <div class="space-y-[16px] flex flex-col">
+              <h5 class="mb-[12px]">Subscribe to our newsletter</h5>
+              <div class="flex flex-col space-y-[16px]">
                 <input
                   type="text"
-                  class="h-[38px] bg-[#F4F9F8] px-[14px] py-[10px] rounded-theme"
+                  class="h-[38px] px-[14px] bg-[#F4F9F8] rounded-theme"
                   placeholder="Enter Email"
                 />
-                <button class="btn btn--lg btn--sky-blue rounded-theme">
+                <button class="btn btn--lg btn--rounded btn--sky-blue">
                   Subscribe
                 </button>
               </div>
@@ -262,6 +268,6 @@
       </div>
     </main>
 
-    <script type="module" src="./src/assets/js/main.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
   </body>
 </html>

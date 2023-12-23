@@ -1,4 +1,4 @@
-import { get } from "./request.js";
+import { get } from "./request";
 
 export const serviceNewsList = async () => {
   const res = await get("/news");

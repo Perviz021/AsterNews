@@ -1,7 +1,6 @@
 /* 
  *  Button
 */
-
 .btn {
   @apply h-[32px] px-[15px] inline-flex justify-center items-center text-[15px];
 }
@@ -14,10 +13,6 @@
   @apply h-[46px];
 }
 
-.btn--rounded {
-  @apply rounded-[4px];
-}
-
 .btn--primary {
   @apply bg-primary text-white;
 }
@@ -27,11 +22,15 @@
 }
 
 .btn--outline-amberBlack {
-  @apply border-amberBlack border-[0.2px];
+  @apply border-[0.2px] border-amberBlack;
 }
 
 .btn--outline-skyBlue {
-  @apply border-skyBlue border-[0.2px] text-skyBlue;
+  @apply border-[0.2px] border-skyBlue text-skyBlue;
+}
+
+.btn--rounded {
+  @apply rounded-[4px];
 }
 
 .head-1 {
@@ -51,5 +50,5 @@
 }
 
 .card {
-  @apply bg-white p-[15px] shadow-theme;
+  @apply bg-white p-[15px] shadow-theme rounded-theme;
 }

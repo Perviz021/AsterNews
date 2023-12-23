@@ -1,4 +1,4 @@
-import { serviceCategoryList, serviceNewsList } from "./service.js";
+import { serviceCategoryList, serviceNewsList } from "./service";
 
 const getUiTemplate = (id, selector) => {
   const el = document.getElementById(id);
@@ -26,42 +26,45 @@ const getCategoryIcon = (key) => {
 export const uiNavigator = async () => {
   const res = await serviceCategoryList();
   const navContainer = document.querySelector("#navigation");
-  const tagLink = getUiTemplate("navigation-item", ".nav-link");
+  const template = getUiTemplate("navigation-item", ".nav-link");
 
   let html = "";
   res.forEach((i) => {
-    let newTemplate = tagLink;
+    let newTemplate = template;
     newTemplate.querySelector("i").classList = `icon ${getCategoryIcon(
       i.slug
     )}`;
-    newTemplate.querySelector("span").textContent =
-      i.slug[0].toUpperCase() + i.slug.slice(1);
+
+    newTemplate.querySelector("span").textContent = i.name;
+
     html += newTemplate.outerHTML;
   });
+
   navContainer.innerHTML = html;
 };
 
 export const uiSubscription = () => {
-  const subsContainer = document.querySelector("#subscription");
+  const content = document.querySelector("#subscription");
   const item = getUiTemplate("subscription-box", "div");
-  subsContainer.innerHTML = item.outerHTML;
+
+  content.innerHTML = item.outerHTML;
 };
 
 export const uiNews = async () => {
   const res = await serviceNewsList();
-  const newsContainer = document.querySelector("#news-container");
-  const newsTemplate = getUiTemplate("news-template", "article");
+  const content = document.querySelector("#news-content");
+  const template = getUiTemplate("news-template", "article");
 
-  let html = ``;
+  let html = "";
   res.forEach((i) => {
-    let newTemplate = newsTemplate;
+    let newTemplate = template;
     newTemplate.querySelector("figure img").src = i.photo;
     newTemplate.querySelector(".title").textContent = i.title;
-    newTemplate.querySelector(".text").textContent = i.description;
     newTemplate.querySelector(".agency").textContent = i.author.agency;
     newTemplate.querySelector(".read-later").href = `/view.html?slug=${i.slug}`;
+
     html += newTemplate.outerHTML;
   });
 
-  newsContainer.innerHTML = html;
+  content.innerHTML = html;
 };

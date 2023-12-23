@@ -2,21 +2,20 @@
   @apply !outline-none;
 }
 
-body,
 html {
-  @apply h-full bg-[#F4F9F8];
+  @apply h-full;
 }
 
-body * {
+body {
   @apply text-amberBlack;
 }
 
 .nav-link {
-  @apply py-[12px] flex px-[30px] items-center;
+  @apply flex items-center px-[30px] py-[16px];
 }
 
 .nav-link .icon {
-  @apply text-[24px] mr-[24px];
+  @apply text-[24px] mr-[22px];
 }
 
 .nav-link span {
@@ -24,7 +23,7 @@ body * {
 }
 
 .nav-link.active {
-  @apply bg-[rgba(47,_159,_248,_0.10)] rounded-tr-full rounded-br-full relative after:content-[''] after:absolute after:w-[5px] after:h-[5px] after:rounded-full after:bg-skyBlue after:left-[15px] after:top-2/4 after:-translate-y-2/4;
+  @apply bg-[rgba(47,_159,_248,_0.10)] rounded-tr-full rounded-br-full relative before:content-[''] before:absolute before:h-[5px] before:w-[5px] before:bg-skyBlue before:left-[15px] before:rounded-full;
 }
 
 .nav-link.active * {
@@ -36,9 +35,9 @@ body * {
 }
 
 .dropdown-menu {
-  @apply absolute right-0 z-50 w-[190px] transition-all top-0 invisible opacity-0;
+  @apply w-[180px] absolute right-0 transition-all z-50 top-0 invisible opacity-0;
 }
 
 .dropdown-menu--open {
-  @apply opacity-100 visible top-full;
+  @apply top-full visible opacity-100;
 }

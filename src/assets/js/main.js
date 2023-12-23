@@ -1,7 +1,6 @@
 import "../css/index.css";
-
 import Alpine from "alpinejs";
-import { uiNavigator, uiNews, uiSubscription } from "./ui";
+import { uiNavigator, uiNews, uiSubscription } from "./ui.js";
 
 window.Alpine = Alpine;
 

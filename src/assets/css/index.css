@@ -1,6 +1,7 @@
 @import url("../icon/css/icon.css");
 @import url("./tailwind.css");
-@import url("./font.css");
 @import url("./layout.css");
+@import url("./font.css");
 @import url("./helper.css");
 @import url("./style.css");
+@import url("./typography.css");

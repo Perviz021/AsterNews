@@ -1,6 +1,6 @@
-const baseURL = `https://all-api.bitcode.az/api`;
+const baseURL = "https://all-api.bitcode.az/api";
 
-const request = async (url, method, params = false) => {
+export const request = async (url, method, params = false) => {
   let headers = {};
 
   let options = {

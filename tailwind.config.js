@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./public/**/*.html"],
   theme: {
     extend: {
       container: {
@@ -19,5 +19,11 @@ export default {
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false, //tailwind'in oz aspect ratio islemesin
+  },
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+  ],
 };

@@ -41,3 +41,11 @@ body {
 .dropdown-menu--open {
   @apply top-full visible opacity-100;
 }
+
+.loading {
+  @apply fixed hidden flex justify-center items-center h-full w-full inset-0 after:content-[''] after:absolute after:inset-0 after:bg-white/60;
+}
+
+.loading img {
+  @apply relative z-10 w-[60px] h-[60px] object-contain;
+}
